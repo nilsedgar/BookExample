@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Book {
 
+    private int id;
     private String title;
     private int yearPublished;
     private int availableCopies;
@@ -9,6 +10,17 @@ public class Book {
     private String language;
     private int pageCount;
     private String author;
+
+    public Book(int id, String title, int yearPublished, int availableCopies, String summary, String language, int pageCount, String author) {
+        this.id = id;
+        this.title = title;
+        this.yearPublished = yearPublished;
+        this.availableCopies = availableCopies;
+        this.summary = summary;
+        this.language = language;
+        this.pageCount = pageCount;
+        this.author = author;
+    }
 
     public Book(String title, int yearPublished, int availableCopies, String summary, String language, int pageCount, String author) {
         this.title = title;
@@ -20,7 +32,19 @@ public class Book {
         this.author = author;
     }
 
+    public Book(String title){
+        this.title = title;
+    }
+
     public Book() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {

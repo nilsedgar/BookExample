@@ -14,7 +14,7 @@ public class LoanRepository {
              PreparedStatement stmtTwo = conn.prepareStatement("UPDATE books SET available_copies=available_copies+1 WHERE id=?")) {
 
             stmt.setInt(1, loan.getLoanId());
-            stmtTwo.setInt(1, loan.getBookId());
+            stmtTwo.setInt(1, loan.getBook().getId());
             int loanRowsAffected = stmt.executeUpdate();
             int bookRowsAffected = stmtTwo.executeUpdate();
 

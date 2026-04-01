@@ -3,25 +3,18 @@ import java.time.LocalDate;
 public class Loan {
 
     private int loanId;
-    private int bookId;
-    private int memberId;
+    private Book book;
+    private Member member;
     private LocalDate loanDate;
     private LocalDate dueDate;
     private LocalDate returnDate;
 
-    public Loan(int loanId, int bookId, int memberId, LocalDate loanDate, LocalDate dueDate, LocalDate returnDate) {
+    public Loan(int loanId, Book book, Member member, LocalDate loanDate, LocalDate dueDate) {
         this.loanId = loanId;
-        this.bookId = bookId;
-        this.memberId = memberId;
+        this.book = book;
+        this.member = member;
         this.loanDate = loanDate;
         this.dueDate = dueDate;
-        this.returnDate = returnDate;
-    }
-
-
-    public Loan(int loanId, int bookId) {
-        this.loanId = loanId;
-        this.bookId = bookId;
     }
 
     public int getLoanId() {
@@ -32,21 +25,6 @@ public class Loan {
         this.loanId = loanId;
     }
 
-    public int getBookId() {
-        return bookId;
-    }
-
-    public void setBookId(int bookId) {
-        this.bookId = bookId;
-    }
-
-    public int getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(int memberId) {
-        this.memberId = memberId;
-    }
 
     public LocalDate getLoanDate() {
         return loanDate;
@@ -70,5 +48,33 @@ public class Loan {
 
     public void setReturnDate() {
         this.returnDate = LocalDate.now();
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    public Member getMember() {
+        return member;
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
+    }
+
+    @Override
+    public String toString() {
+        return "Loan{" +
+                "loanId=" + loanId +
+                ", book=" + book +
+                ", member=" + member +
+                ", loanDate=" + loanDate +
+                ", dueDate=" + dueDate +
+                ", returnDate=" + returnDate +
+                '}';
     }
 }

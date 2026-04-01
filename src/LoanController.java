@@ -8,6 +8,7 @@ public class LoanController {
 
     public void showLoanMenu(){
 
+
         boolean active = true;
 
         while(active){
@@ -21,7 +22,7 @@ public class LoanController {
                     int loanId = scanner.nextInt();
                     System.out.println("Enter the book id:");
                     int bookId = scanner.nextInt();
-                    loanService.returnLoan(new Loan(loanId, bookId));
+                    //loanService.returnLoan(new Loan(loanId, bookId));
                     break;
                 }
                 case 0:
