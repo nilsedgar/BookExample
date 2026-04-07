@@ -4,39 +4,40 @@ public class Book {
 
     private int id;
     private String title;
+    private String isbn;
     private int yearPublished;
     private int availableCopies;
+    private int totalCopies;
     private String summary;
     private String language;
     private int pageCount;
-    private String author;
+    private ArrayList<Author> authors;
+    private ArrayList<Category> categories;
 
-    public Book(int id, String title, int yearPublished, int availableCopies, String summary, String language, int pageCount, String author) {
+    public Book(int id, String title, String isbn, int yearPublished, int availableCopies, int totalCopies, String summary, String language, int pageCount, ArrayList<Author> authors, ArrayList<Category> categories) {
         this.id = id;
         this.title = title;
+        this.isbn = isbn;
         this.yearPublished = yearPublished;
         this.availableCopies = availableCopies;
+        this.totalCopies = totalCopies;
         this.summary = summary;
         this.language = language;
         this.pageCount = pageCount;
-        this.author = author;
+        this.authors = authors;
+        this.categories = categories;
     }
 
-    public Book(String title, int yearPublished, int availableCopies, String summary, String language, int pageCount, String author) {
+    public Book(int id, String title, String isbn, int yearPublished, int availableCopies, int totalCopies, String summary, String language, int pageCount) {
+        this.id = id;
         this.title = title;
+        this.isbn = isbn;
         this.yearPublished = yearPublished;
         this.availableCopies = availableCopies;
+        this.totalCopies = totalCopies;
         this.summary = summary;
         this.language = language;
         this.pageCount = pageCount;
-        this.author = author;
-    }
-
-    public Book(String title){
-        this.title = title;
-    }
-
-    public Book() {
     }
 
     public int getId() {
@@ -55,6 +56,14 @@ public class Book {
         this.title = title;
     }
 
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
     public int getYearPublished() {
         return yearPublished;
     }
@@ -69,6 +78,14 @@ public class Book {
 
     public void setAvailableCopies(int availableCopies) {
         this.availableCopies = availableCopies;
+    }
+
+    public int getTotalCopies() {
+        return totalCopies;
+    }
+
+    public void setTotalCopies(int totalCopies) {
+        this.totalCopies = totalCopies;
     }
 
     public String getSummary() {
@@ -95,25 +112,36 @@ public class Book {
         this.pageCount = pageCount;
     }
 
-    public String getAuthor() {
-        return author;
+    public ArrayList<Author> getAuthors() {
+        return authors;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthors(ArrayList<Author> authors) {
+        this.authors = authors;
+    }
+
+    public ArrayList<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(ArrayList<Category> categories) {
+        this.categories = categories;
     }
 
     @Override
     public String toString() {
-        return "Title='" + title + '\'' +
-                ", Year published=" + yearPublished +
-                ", Available copies=" + availableCopies +
-                ", Summary='" + summary + '\'' +
-                ", Language='" + language + '\'' +
-                ", Page count=" + pageCount +
-                ", Author='" + author + '\'' +
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", yearPublished=" + yearPublished +
+                ", availableCopies=" + availableCopies +
+                ", totalCopies=" + totalCopies +
+                ", summary='" + summary + '\'' +
+                ", language='" + language + '\'' +
+                ", pageCount=" + pageCount +
+                ", authors=" + authors +
+                ", categories=" + categories +
                 '}';
     }
-
-
 }

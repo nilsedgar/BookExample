@@ -26,8 +26,8 @@ public class BookController {
             int choice = scanner.nextInt();
             switch(choice){
                 case 1: {
-                    ArrayList<Book> books = bookService.getAllBooks();
-                    for (Book b : books) {
+                    ArrayList<BiggerBookDTO> books = bookService.getAllBooks();
+                    for (BiggerBookDTO b : books) {
                         System.out.println(b.toString());
                     }
                     break;

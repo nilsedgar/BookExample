@@ -14,10 +14,10 @@ public class MemberController {
             String choice = scanner.nextLine().trim();
             switch(choice){
                 case "1":{
-                    ArrayList<LoanDTO> loansDtos = memberService.getLoansByMember(Main.loggedInUser.getId());
-                    for(LoanDTO loanDto : loansDtos){
-                        System.out.println(loanDto.toString());
-                    }
+//                    ArrayList<LoanDTO> loansDtos = memberService.getLoansByMember(Main.loggedInUser.getId());
+//                    for(LoanDTO loanDto : loansDtos){
+//                        System.out.println(loanDto.toString());
+//                    }
                 }
             }
         }
